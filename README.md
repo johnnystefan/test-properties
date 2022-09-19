@@ -19,6 +19,7 @@ Python 3.8.10
 * [mysql-connector-python](https://dev.mysql.com/doc/connector-python/en/) - connector to MySQL DB.
 * [VS Code](https://code.visualstudio.com/) - Code Editor.
 
+
 ### Installation 🔧
 
 _In order to run the python script you will need to have Python installed on your system._
@@ -132,7 +133,11 @@ Based on the second requirement, the following arises:
 + In order to continue with the other micro we must also think about creating a table to relate the tables as "Like" by users as the properties, this includes the respective ForeignKeys of the users table and the property table.
 + In the "Like" Microservice, we would only build the logic to identify the property id and mark or unmark the "Like" of the property, for this we will need the information of the property that our first microservice is doing, this information can be obtained from microservice in parallel, consuming the same api that we already created or, two, using gRPC and configuring protobuffers on both micros, gRPC being the best option in terms of performance and response speeds.
 ### Regarding the extra point:
-++ Proposing a better structure is feasible. On my part, I also attached a file with the extension ".drawio" to the repo.
+++ Proposing a better structure is feasible. On my part, I also attached a file with the extension [".drawio"](https://github.com/johnnystefan/test-properties/blob/main/Drawio/model.drawio) to the repo.
+
+* [Drawio](https://drawio-app.com/) - Viewer .drawio
+
+![My Remote Image](https://github.com/johnnystefan/test-properties/blob/main/MER_Properties.png)
 
 ++ I would distribute the schema in this way: For the cities I would make a table with all the cities that we manage and reference them by a City_Code, the same as for the management of the Status table (since then there may be the possibility that there are more types of states for a dwelling) since as it is currently to be able to do the information flow I must do it by string, which seems to me to be a bad practice.
 
