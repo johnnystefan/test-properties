@@ -5,6 +5,13 @@ from mysql.connector import connect, Error
 from config import settings
 
 class Finder:
+    """_summary_
+    Finder is the one in charge of making the queries
+    to the database.
+
+    Features:
+    connection : Create and get connection to MySQL
+    """
     def __init__(self):
         self.connection = connect(
             host=settings.database_hostname,
@@ -16,11 +23,29 @@ class Finder:
         print(f"connection DB started")
 
     def __del__(self):
+        """_summary_
+        Once the app cycle is destroyed, this close
+        the connection to the database.
+        """
         if self.connection.is_connected():
             self.connection.close()
             print(f"connection DB finished")
 
     def get_properties(self):
+        """_summary_
+        Get the list of all properties
+        available to the user.
+
+        Returns:
+            Type: json
+            "ID": "The ID of the property",
+            "Address": "Property address",
+            "City": "City where the property is located",
+            "Price": "The cost of ownership",
+            "Description": "A brief description of the property",
+            "Year": "Year the property was built",
+            "Status": "The status or availability of the property"
+        """
         try:
             with self.connection.cursor() as cursor:
                 get_properties_query = '''
@@ -48,6 +73,23 @@ class Finder:
             print(ex)
 
     def get_properties_filtered(self, year=2022, city='bogota', name='pre_venta'):
+        """_summary_
+        Filter properties by year, city and availability.
+
+        Args:
+            year (int): Year of construction of the property.
+            city ​​(str): City where the property is located.
+            status (str): Status or availability of the property.
+
+        returns:
+            "ID": "The ID of the property",
+            "Address": "Property address",
+            "City": "City where the property is located",
+            "Price": "The cost of ownership",
+            "Description": "A brief description of the property",
+            "Year": "Year the property was built",
+            "Status": "The status or availability of the property"
+        """
         try:
             with self.connection.cursor() as cursor:
                 if year == None:

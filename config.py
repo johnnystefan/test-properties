@@ -3,6 +3,12 @@ from pydantic import BaseSettings
 
 
 class Settings(BaseSettings):
+    """_summary_
+    Settings serves the environment variables.
+
+    Args:
+        ... (str): connection string for the database.
+    """
     database_hostname: str = '3.130.126.210'
     database_port: str = 3309
     database_username: str = 'pruebas'
