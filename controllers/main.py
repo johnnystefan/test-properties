@@ -12,13 +12,13 @@ manager = PropertiesManager()
 @app.get("/")
 def home():
     """_summary_
-    Home De la App
+    App Home
 
     Args:
         Empty
 
-    Returns:
-        str: Mensaje de Bienvenida
+    returns:
+        str: Welcome Message
     """
     return {"Welcome": "Test Habi Backend"}
 
@@ -26,20 +26,20 @@ def home():
 @app.get("/property/get-properties")
 def get_properties():
     """_summary_
-    Desde este path obtenemos las propiedasdes disponibles
-    para los usuarios.
+    From this path we obtain the available properties
+    For the users.
 
     Args:
         Empty
 
     Response:
-        "ID": "El ID de la propiedad",
-        "Address": "Direccion de la propiedad",
-        "City": "Ciudad donde se ubica la propiedad",
-        "Price": "El costo de la propieda",
-        "Description": "Una breve descripcion de la propiedad",
-        "Year": "Año en la que se construyo la propiedad",
-        "Status": "El estado o disponibilida de la propiedad"
+        "ID": "The ID of the property",
+        "Address": "Property address",
+        "City": "City where the property is located",
+        "Price": "The cost of ownership",
+        "Description": "A brief description of the property",
+        "Year": "Year the property was built",
+        "Status": "The status or availability of the property"
     """
     properties = manager.get_properties()
     if properties == None:
@@ -72,21 +72,21 @@ def get_properties_filtered(
         )
 ):
     """_summary_
-    Filtrar las propiedades por año, ciudad y disponibilidad.
+    Filter properties by year, city and availability.
 
     Args:
-        year (int): Año de Construccion de la propiedad.
-        city (str): Ciudad donde se ubica la propiedad.
-        status (str): Estado o disponibilidad de la propiedad.
+        year (int): Year of construction of the property.
+        city ​​(str): City where the property is located.
+        status (str): Status or availability of the property.
 
-    Returns:
-        "ID": "El ID de la propiedad",
-        "Address": "Direccion de la propiedad",
-        "City": "Ciudad donde se ubica la propiedad",
-        "Price": "El costo de la propieda",
-        "Description": "Una breve descripcion de la propiedad",
-        "Year": "Año en la que se construyo la propiedad",
-        "Status": "El estado o disponibilida de la propiedad"
+    returns:
+        "ID": "The ID of the property",
+        "Address": "Property address",
+        "City": "City where the property is located",
+        "Price": "The cost of ownership",
+        "Description": "A brief description of the property",
+        "Year": "Year the property was built",
+        "Status": "The status or availability of the property"
     """
     properties = manager.get_properties_filtered(year, city, status)
     if properties == None:
