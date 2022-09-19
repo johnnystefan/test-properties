@@ -1,4 +1,4 @@
-#TestProperties
+# Test Properties
 
 _Backend with Python_
 
@@ -123,7 +123,7 @@ INFO:     Waiting for application startup.
 INFO:     Application startup complete.
 ```
 
-Ready you can start testing.
+#### Ready you can start testing. 🚀
 
 ## Answers Regarding Test Instructions:
 
