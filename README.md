@@ -137,7 +137,9 @@ Based on the second requirement, the following arises:
 
 * [Drawio](https://drawio-app.com/) - Viewer .drawio
 
-![My Remote Image](https://github.com/johnnystefan/test-properties/blob/main/MER_Properties.png)
+<p align="center">
+  <img src="https://github.com/johnnystefan/test-properties/blob/main/MER_Properties.png" alt="MER image"/>
+</p>
 
 ++ I would distribute the schema in this way: For the cities I would make a table with all the cities that we manage and reference them by a City_Code, the same as for the management of the Status table (since then there may be the possibility that there are more types of states for a dwelling) since as it is currently to be able to do the information flow I must do it by string, which seems to me to be a bad practice.
 
